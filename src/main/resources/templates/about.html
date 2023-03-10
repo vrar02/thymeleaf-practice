@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
 <body>
-Welcome to Thymeleaf..
+
+<h1>Welcome to thymeleaf...</h1>
+
+<h1 th:text="${msg}"></h1>
+<h1 th:text="${currentdate}"></h1>
+
+Length of the message:<span th:text="${#strings.length(msg)}"></span>
+
+<div th:with="a= 5,b=67,c=${msg}">
+    <span th:text="${a}"></span><br>
+    <span th:text="'Value of b is '+${b}"></span><br>
+    <span th:text="${c}"></span><br>
+</div>
+
+<hr>
+
+<h1 th:text="${names}"></h1>
+<ul th:each="n,status:${names}">
+    <li th:text="${status.index}+' '+${n}"></li>
+</ul>
+
+<hr>
+<ul th:each="n,status:${names}">
+    <span th:style="${status.odd}?'color:red':''" th:text="${status.index}+' '+${n}"></span>
+</ul>
+
+
+
 </body>
 </html>
