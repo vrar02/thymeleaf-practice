@@ -41,4 +41,14 @@ public class MyFirstController {
         return "service";
     }
 
+    @GetMapping("/newcontact")
+    public String getContactPage(Model model){
+        return "newcontact";
+    }
+
+    @GetMapping("/newservices")
+    public String getNewServices(Model model){
+        return "newservices";
+    }
+
 }
