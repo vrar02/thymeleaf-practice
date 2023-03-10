@@ -23,6 +23,15 @@ public class MyFirstController {
         model.addAttribute("names",names);
         return "about";
     }
-    
+
+    @RequestMapping(value="/condition",method = RequestMethod.GET)
+    public String conditionalHandler(Model model){
+        System.out.println("conditional handler executed");
+        model.addAttribute("isActive",false);
+        model.addAttribute("gender","M");
+        List<Integer> ls=List.of(233,244,255,53,42,64);
+        model.addAttribute("ls",ls);
+        return "condition";
+    }
 
 }
