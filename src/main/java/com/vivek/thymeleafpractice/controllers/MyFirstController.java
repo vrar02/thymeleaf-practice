@@ -1,7 +1,9 @@
 package com.vivek.thymeleafpractice.controllers;
 
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +34,11 @@ public class MyFirstController {
         List<Integer> ls=List.of(233,244,255,53,42,64);
         model.addAttribute("ls",ls);
         return "condition";
+    }
+
+    @GetMapping("/service")
+    public String getServicePage(Model model){
+        return "service";
     }
 
 }
